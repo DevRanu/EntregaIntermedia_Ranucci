@@ -1,0 +1,66 @@
+*{
+    background: url("../assets/img/bg-dog.jpg") no-repeat center center fixed;
+    color: rgb(255, 255, 255);
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.titulo h1{
+    margin-left: 30%;
+    font-size: 50px;
+    padding: 40px;
+    color: black;
+    text-shadow:  -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255);
+    border: 8px;
+    border-radius: 10px;
+}
+
+.subTitulo {
+    color: blueviolet;
+    font-size: 40px;
+}
+
+
+.btnMovimiento {
+    font-size: 30px;
+    margin-top: 100px;
+    padding: 20px;
+    background-color: black;
+    text-shadow:  -1px -1px 0 rgb(78, 197, 189), 1px -1px 0 rgb(78, 197, 189), -1px 1px 0 rgb(78, 197, 189), 1px 1px 0 rgb(78, 197, 189);
+    border: 10px;
+    border-color: blueviolet;
+}
+
+.listas {
+    font-size: 23px;
+    font-weight: bold;
+    color: black;
+    text-shadow:  -1px -1px 0 rgb(78, 197, 189), 1px -1px 0 rgb(78, 197, 189), -1px 1px 0 rgb(78, 197, 189), 1px 1px 0 rgb(78, 197, 189);
+}
+
+
+.btnAccion {
+    font-size: 20px;
+    margin-left: 20px;
+    text-shadow:  -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 rgb(0, 0, 0);
+}
+
+.btnAccion:hover {
+    color: white;
+    font-size: 25px;
+}
+
+.btnForm {
+    margin-top: 20px;
+    font-size: 30px;
+    margin-left: 20px;
+    text-shadow:  -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 rgb(0, 0, 0);
+}
+
+.btnForm:hover {
+    margin-top: 20px;
+    font-size: 35px;
+    color: greenyellow;
+    margin-left: 20px;
+}

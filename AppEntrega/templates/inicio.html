@@ -1,0 +1,15 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block styles %} <link rel="stylesheet" href="{% static 'css/styles.css' %} "> {% endblock %}
+
+{% block title %} Entrega Intermedia Ranucci {% endblock %}
+
+{% block titulo %}
+Inicio
+{% endblock %}
+
+
+{% block btnCategorias %}
+    <h1> <a class="btnCategorias" href="{% url 'categorias' %}"> Categorias </a> </h1>
+{% endblock %}

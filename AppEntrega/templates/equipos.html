@@ -1,0 +1,40 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block styles %} <link rel="stylesheet" href="{% static 'css/equipos.css' %} "> {% endblock %}
+
+{% block title %} Equipos {% endblock %}
+
+{% block titulo %}
+Lista de Equipos
+{% endblock %}
+
+{% block contenido %}
+    <ul>
+        {{ mensaje }}
+        <h1 class="subTitulo"> Listado </h1>
+        <a class="btnAccion" href="{% url 'searchEquipo' %}"> Buscar </a>
+
+        {% for equipo in equipos %}
+        <li class="listas">{{ equipo.pais }}, de {{ equipo.continente }}  |  Sigue jugando?: {{ equipo.sigueJugando }}</li>
+
+        <a class="btnAccion" href="{% url 'editEquipo' equipo.id %}"> Editar </a>
+        <a class="btnAccion" href="{% url 'delEquipo' equipo.id %}"> Borrar </a>
+
+        {% endfor %}
+
+        <div class="btnForm">
+            <a class="btn" href="../addEquipo"> Agregar </a>
+        </div>
+
+    </ul>
+{% endblock %}
+
+{% block btnMovimiento %}
+<div>
+<a class="btn" href="../categorias"> Atrás </a>
+</div>
+<div>
+<a class="btn" href="{% url 'inicio' %}"> Inicio </a>
+</div>
+{% endblock %}

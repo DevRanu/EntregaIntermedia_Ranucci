@@ -1,0 +1,35 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block styles %} <link rel="stylesheet" href="{% static 'css/autos.css' %} "> {% endblock %}
+
+{% block title %} Autos {% endblock %}
+
+{% block titulo %}
+Agregar Auto
+{% endblock %}
+
+{% block contenido %}
+
+    <form action="{% url 'addAuto' %}" method="POST"> {% csrf_token %}
+        
+        <table>
+            {{ form.as_table }}
+        </table>
+
+        <input type="submit" value="Guardar Auto">
+
+    </form>
+
+{% endblock %}
+
+{{ mensaje }}
+
+{% block btnMovimiento %}
+    <div>
+    <a class="btn" href="../autos"> Atrás </a>
+    </div>
+    <div>
+    <a class="btn" href="{% url 'inicio' %}"> Inicio </a>
+    </div>
+{% endblock %}

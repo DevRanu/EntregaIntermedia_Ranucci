@@ -1,0 +1,33 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block styles %} <link rel="stylesheet" href="{% static 'css/equipos.css' %} "> {% endblock %}
+
+{% block title %} Equipos {% endblock %}
+
+{% block titulo %}
+Modificar Equipo
+{% endblock %}
+
+{% block contenido %}
+
+    <form action="{% url 'editEquipo' equipo.id %}" method="POST"> {% csrf_token %}
+        
+        <table>
+            {{ form.as_table }}
+        </table>
+
+        <input type="submit" value="Editar Equipo">
+
+    </form>
+
+{% endblock %}
+
+{% block btnMovimiento %}
+    <div>
+    <a class="btn" href="../equipos"> Atrás </a>
+    </div>
+    <div>
+    <a class="btn" href="{% url 'inicio' %}"> Inicio </a>
+    </div>  
+{% endblock %}

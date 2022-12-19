@@ -1,0 +1,33 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block styles %} <link rel="stylesheet" href="{% static 'css/perros.css' %} "> {% endblock %}
+
+{% block title %} Perros {% endblock %}
+
+{% block titulo %}
+Modificar Perro
+{% endblock %}
+
+{% block contenido %}
+
+    <form action="{% url 'editPerro' perro.id %}" method="POST"> {% csrf_token %}
+        
+        <table>
+            {{ form.as_table }}
+        </table>
+
+        <input type="submit" value="Editar Perro">
+
+    </form>
+
+{% endblock %}
+
+{% block btnMovimiento %}
+    <div>
+    <a class="btn" href="../perros"> Atrás </a>
+    </div>
+    <div>
+    <a class="btn" href="{% url 'inicio' %}"> Inicio </a>
+    </div>  
+{% endblock %}

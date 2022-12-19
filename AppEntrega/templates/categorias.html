@@ -1,0 +1,23 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block styles %} <link rel="stylesheet" href="{% static 'css/styles.css' %} "> {% endblock %}
+
+{% block title %} Categorias {% endblock %}
+
+{% block titulo %}
+Página central de la App
+{% endblock %}
+
+{% block botonesCategorias %}
+    <h1> <a class="btnAutos" href="{% url 'autos' %}"> Autos </a> </h1>
+    <h1> <a class="btnAutos" href="{% url 'perros' %}"> Perros </a> </h1>
+    <h1> <a class="btnAutos" href="{% url 'equipos' %}"> Equipos </a> </h1>
+{% endblock %}
+
+
+
+
+{% block btnMovimiento %}
+    <a class="btnInicio" href="{% url 'inicio' %}"> Inicio </a>
+{% endblock %}  

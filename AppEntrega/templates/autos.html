@@ -1,0 +1,40 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block styles %} <link rel="stylesheet" href="{% static 'css/autos.css' %} "> {% endblock %}
+
+{% block title %} Autos {% endblock %}
+
+{% block titulo %}
+Lista de Autos
+{% endblock %}
+
+{% block contenido %}
+    <ul>
+        {{ mensaje }}
+        <h1 class="subTitulo"> Listado </h1>
+        <a class="btnAccion" href="{% url 'searchAuto' %}"> Buscar </a>
+
+        {% for auto in autos %}
+        <li class="listas">{{ auto.marca }} {{ auto.modelo }} mod. {{ auto.anio }}</li>
+
+        <a class="btnAccion" href="{% url 'editAuto' auto.id %}"> Editar </a>
+        <a class="btnAccion" href="{% url 'delAuto' auto.id %}"> Borrar </a>
+
+        {% endfor %}
+
+        <div class="btnForm">
+            <a class="btn" href="../addAuto"> Agregar </a>
+        </div>
+
+    </ul>
+{% endblock %}
+
+{% block btnMovimiento %}
+<div>
+<a class="btn" href="../categorias"> Atrás </a>
+</div>
+<div>
+<a class="btn" href="{% url 'inicio' %}"> Inicio </a>
+</div>
+{% endblock %}

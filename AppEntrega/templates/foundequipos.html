@@ -1,0 +1,42 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block styles %} <link rel="stylesheet" href="{% static 'css/equipos.css' %} "> {% endblock %}
+
+{% block title %} Equipos {% endblock %}
+
+{% block titulo %}
+Resultado de la búsqueda de equipos.
+{% endblock %}
+
+{% block contenido %}
+{{ mensaje }}
+
+<form action="{% url 'foundEquipo' %}" method="GET">
+
+    <input type="text" name="continente" id="continente" placeholder="Ingresá el continente acá.">
+
+    <input type="submit" value="Buscar por continente">
+
+</form>
+
+<h1 class="subTitulo"> Equipos encontrados </h1>
+
+{% for equipo in equipos %}
+<h3 class="listas"> {{ equipo.pais }}, {{ equipo.continente }} </h3>
+
+
+{% endfor %}
+
+</form>
+
+{% endblock %}
+
+{% block btnMovimiento %}
+<div>
+<a class="btn" href="../equipos"> Atrás </a>
+</div>
+<div>
+<a class="btn" href="{% url 'inicio' %}"> Inicio </a>
+</div>
+{% endblock %}

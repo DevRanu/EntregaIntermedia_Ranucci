@@ -1,0 +1,42 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block styles %} <link rel="stylesheet" href="{% static 'css/autos.css' %} "> {% endblock %}
+
+{% block title %} Autos {% endblock %}
+
+{% block titulo %}
+Resultado de la búsqueda de autos.
+{% endblock %}
+
+{% block contenido %}
+{{ mensaje }}
+
+<form action="{% url 'foundAuto' %}" method="GET">
+
+    <input type="text" name="marca" id="marca" placeholder="Ingresá la marca acá.">
+
+    <input type="submit" value="Buscar marca">
+
+</form>
+
+<h1 class="subTitulo"> Autos encontrados </h1>
+
+{% for auto in autos %}
+<h3 class="listas"> {{ auto.marca }} {{ auto.modelo }} mod. {{ auto.anio }} </h3>
+
+
+{% endfor %}
+
+</form>
+
+{% endblock %}
+
+{% block btnMovimiento %}
+<div>
+<a class="btn" href="../autos"> Atrás </a>
+</div>
+<div>
+<a class="btn" href="{% url 'inicio' %}"> Inicio </a>
+</div>
+{% endblock %}

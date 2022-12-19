@@ -1,0 +1,40 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block styles %} <link rel="stylesheet" href="{% static 'css/perros.css' %} "> {% endblock %}
+
+{% block title %} Perros {% endblock %}
+
+{% block titulo %}
+Lista de Perros
+{% endblock %}
+
+{% block contenido %}
+    <ul>
+        {{ mensaje }}
+        <h1 class="subTitulo"> Listado </h1>
+        <a class="btnAccion" href="{% url 'searchPerro' %}"> Buscar </a>
+
+        {% for perro in perros %}
+        <li class="listas">{{ perro.nombre }} {{ perro.raza }} tiene {{ perro.edad }} años y es {{ perro.genero }}</li>
+
+        <a class="btnAccion" href="{% url 'editPerro' perro.id %}"> Editar </a>
+        <a class="btnAccion" href="{% url 'delPerro' perro.id %}"> Borrar </a>
+
+        {% endfor %}
+
+        <div class="btnForm">
+            <a class="btn" href="../addPerro"> Agregar </a>
+        </div>
+
+    </ul>
+{% endblock %}
+
+{% block btnMovimiento %}
+<div>
+<a class="btn" href="../categorias"> Atrás </a>
+</div>
+<div>
+<a class="btn" href="{% url 'inicio' %}"> Inicio </a>
+</div>
+{% endblock %}
